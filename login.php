@@ -8,7 +8,7 @@ session_start();
 </head>
 <body>
 Login form
-<form action="logincheck.php" method ="post">
+<form action="purelogin.php" method ="post">
 	<input type="text" placeholder="Enter your username" name="username" required> 
 	<br>
 	<input type="password" placeholder="Enter your password" name="password" required>
