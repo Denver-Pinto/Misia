@@ -1,5 +1,7 @@
 <?php
+require 'connection.php';
 session_start();
+
 ?>
 <html>
 <head>
@@ -54,27 +56,21 @@ function showError(error) {
 		$("#lng").attr("required","required");
 }
 </script>
-<script>
-$(document).ready(function(){
-	$("button").click(function(){
-		window.location="login.php";
-	});
-
-});
-</script>
 </head>
-<body >
-<button>Shop owner</button>
-<form action=" medical.php" method ="post">
-	<input type="text" placeholder="Enter your medicine here" name="medicine" required>
+<body>
+Signup form
+<form action="puresignup.php" method ="post">
+	<input type="text" placeholder="Enter your username" name="username" required>
+	<br>
+	<input type="password" placeholder="Enter your password" name="password" required>
 	<br>
 	Latitude<input type ="number" step="0.000001" readonly min="-90.000000" max ="90.000000" id="lat" name="lat" value="">
 	<br>
 	Longitude<input type="number" step="0.000001" readonly min="-180.000000" max="180.000000" id="lng" name="lng" value="">		
 	<br>
-	Distance<input type="number" step="1" min="0" name="distance" id="distance">
+	<input type ="submit" value ="signup">
 	<br>
-	<input type ="submit" value ="search">
 </form>
+<a href="login.php">Login</a> if you have registered your store with us!
 </body>
 </html>
