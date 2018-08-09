@@ -1,6 +1,9 @@
 <?php
 require 'connection.php';
 session_start();
+if(isset($_SESSION["table"])){//session name is not set so logout
+  header('location:inventory.php');
+}
 ?>
 <html>
 <head>

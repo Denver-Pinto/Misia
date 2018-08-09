@@ -1,6 +1,9 @@
 <<?php
 require 'connection.php';
 session_start();
+if(!isset($_SESSION["table"])){//session name is not set so logout
+  header('location:login.php');
+}
 echo "WELCOME".$_SESSION["table"]."<br>";
 ?>
 <html>
@@ -17,7 +20,9 @@ $(document).ready(function(){
 	$(".close").click(function(){
 		$("#myModal").hide();
 	});
-	
+	$("#logout").click(function(){
+		window.location="logouter.php";
+	});
 
 });
 </script>

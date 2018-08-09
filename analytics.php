@@ -1,5 +1,8 @@
 <?php require 'connection.php';
 session_start();
+if(!isset($_SESSION["table"])){//session name is not set so logout
+  header('location:login.php');
+}
 $d= date("Y-m-d H:i:s");
 $date=date_create($d);
 date_sub($date,date_interval_create_from_date_string("30 days"));
