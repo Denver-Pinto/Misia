@@ -16,12 +16,12 @@ $(document).ready(function(){
 </head>
 <body>
 <?php
-$_SESSION["POST_VARS"]=$_POST;
-$lat= $_SESSION["POST_VARS"]["lat"];
-$lng=$_SESSION["POST_VARS"]["lng"];
-$product=$_SESSION["POST_VARS"]["medicine"];
+//$_SESSION["POST_VARS"]=$_POST;
+$lat= $_POST["lat"];//$_SESSION["POST_VARS"]["lat"];
+$lng=$_POST["lng"];//$_SESSION["POST_VARS"]["lng"];
+$product=$_POST["medicine"];//$_SESSION["POST_VARS"]["medicine"];
 $number=0;
-$distance=$_SESSION["POST_VARS"]['distance'];
+$distance=$_POST["distance"];//$_SESSION["POST_VARS"]['distance'];
 echo  $lat."<br>";
 echo $lng."<br>";
 echo $product."<br>";

@@ -13,9 +13,12 @@ if ( !mysqli_execute($select_data_preparedstmt) ) {
 }
  if(mysqli_stmt_fetch($select_data_preparedstmt)) {    
    $_SESSION["table"]=$_POST["username"];
-   //redirect to analytics page
- }
- //else redirect to login page
+  /* close connection */
+mysqli_close($con);
+  header("Location:inventory.php");
+ }else{
 /* close connection */
 mysqli_close($con);
+ header("Location:login.php");
+ }
 ?>

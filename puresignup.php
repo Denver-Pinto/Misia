@@ -9,11 +9,15 @@ if ( !$insert_data_preparedstmt ) {
 /* bind parameters for markers */
     mysqli_stmt_bind_param($insert_data_preparedstmt, "ssdd", $_POST["username"],$_POST["password"],$_POST["lat"],$_POST["lng"]);
 if ( !mysqli_execute($insert_data_preparedstmt) ) {
-  die( 'stmt error: '.mysqli_stmt_error($insert_data_preparedstmt) );
-  //redirect to signup page
-}
+ // die( 'stmt error: '.mysqli_stmt_error($insert_data_preparedstmt) );
+  //redirect to signup page/* close connection */
+mysqli_close($con);
+header("Location:signup.php");
+}else{
 //redirect to analytics page
       $_SESSION["table"]=$_POST["username"];
 /* close connection */
 mysqli_close($con);
+header("Location:analytics.php");
+}
 ?>
