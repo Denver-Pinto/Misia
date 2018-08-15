@@ -24,34 +24,37 @@ $(document).ready(function(){
 </head>
 <body><button> Back</button>
 	<table>
-	<caption>Last 30 days activity around your  area<br>
+	<caption>Last 30 days activity around your area <?php echo $_SESSION["table"];?><br>
 	</caption>
 	
 	<tr>
 	<td>Product Name</td> <td>Availabilty</td><td>Timestamp</td>
 	</tr>
-	<//to get location of the store logged in
 	<?php
-	$select_ll_preparedstmt= mysqli_prepare($con, "SELECT lat,lng from shops where username={$_SESSION["table"]}");
+	$select_ll_preparedstmt= mysqli_prepare($con, "SELECT lat,lng from shops where username=?");
 	    //check the prepared statement
 		if ( !$select_ll_preparedstmt ) {
-		die('mysqlii error: '.mysqli_error($con));
-			}
+  die('mysqli error: '.mysqli_error($con));
+}
+
+    mysqli_stmt_bind_param($select_ll_preparedstmt, "s", $_SESSION["table"]);
 
 			if ( !mysqli_execute($select_ll_preparedstmt) ) {
 			die( 'stmt error: '.mysqli_stmt_error($select_ll_preparedstmt) );
 			}
 			// execute query 
-		
 		//bind variables to prepared statement 
 		mysqli_stmt_bind_result($select_ll_preparedstmt, $lat,$lng);
-	
 		  // close statement 
+		  
+		  while (mysqli_stmt_fetch($select_ll_preparedstmt)) {}
 		mysqli_stmt_close($select_ll_preparedstmt);
-	
+	?>
+<?php
 	/* create a prepared statement*/
-	//distance needs to be selected
-$select_data_preparedstmt =mysqli_prepare($con, "SELECT  ( 6371 * acos( cos( radians(?) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(?) ) + sin( radians(?) ) * sin( radians( latitude ) ) ) ) AS distance,product,number,time FROM data  HAVING distance < 100 and time> ? ORDER BY time desc");
+	
+	
+$select_data_preparedstmt =mysqli_prepare($con, "SELECT  ( 6371 * acos( cos( radians(?) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(?) ) + sin( radians(?) ) * sin( radians( latitude ) ) ) ) AS distance,product,number,timestamp FROM data  HAVING distance < 100 and timestamp> ? ORDER BY timestamp desc");
 
 if ( !$select_data_preparedstmt ) {
   die('mysqli error: '.mysqli_error($con));
