@@ -22,7 +22,7 @@ if ( !$update_data_preparedstmt ) {
 if ( !mysqli_execute($update_data_preparedstmt) ) {
   die( 'stmt error: '.mysqli_stmt_error($update_data_preparedstmt) );
 }
-     
+ mysqli_stmt_close($update_data_preparedstmt);    
 /* close connection */
 mysqli_close($con);
  header("Location:inventory.php");
@@ -39,7 +39,7 @@ if ( !$insert_data_preparedstmt ) {
 if ( !mysqli_execute($insert_data_preparedstmt) ) {
   die( 'stmt error: '.mysqli_stmt_error($insert_data_preparedstmt) );
 }
-     
+  mysqli_stmt_close($insert_data_preparedstmt);   
 /* close connection */
 mysqli_close($con);
  header("Location:inventory.php");
@@ -57,7 +57,7 @@ if ( !$delete_data_preparedstmt ) {
 if ( !mysqli_execute($delete_data_preparedstmt) ) {
   die( 'stmt error: '.mysqli_stmt_error($delete_data_preparedstmt) );
 }
-     
+   mysqli_stmt_close($delete_data_preparedstmt);  
 /* close connection */
 mysqli_close($con);
  header("Location:inventory.php");
