@@ -78,7 +78,7 @@ if ( !mysqli_execute($select_distance_preparedstmt) ) {
 
  
 //inserting data into the table data using prepared insert statements
-
+//possibilty for optimizing code here
 	$insert_data_preparedstmt =mysqli_prepare($con, "INSERT INTO data(latitude,longitude,product,number)VALUES (?,?,?,?) ");
 
 if ( !$insert_data_preparedstmt ) {
@@ -89,7 +89,7 @@ if ( !$insert_data_preparedstmt ) {
 if ( !mysqli_execute($insert_data_preparedstmt) ) {
   die( 'stmt error: '.mysqli_stmt_error($insert_data_preparedstmt) );
 }
-     
+   mysqli_stmt_close($insert_data_preparedstmt);    
 /* close connection */
 mysqli_close($con);
 ?>

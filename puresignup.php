@@ -2,7 +2,7 @@
 require 'connection.php';
 session_start();
 $insert_data_preparedstmt =mysqli_prepare($con, "INSERT INTO shops(username,password,lat,lng)VALUES (?,?,?,?) ");
-
+//insert shop data 
 if ( !$insert_data_preparedstmt ) {
   die('mysqli error: '.mysqli_error($con));
 }
@@ -11,12 +11,26 @@ if ( !$insert_data_preparedstmt ) {
 if ( !mysqli_execute($insert_data_preparedstmt) ) {
  // die( 'stmt error: '.mysqli_stmt_error($insert_data_preparedstmt) );
   //redirect to signup page/* close connection */
+  mysqli_stmt_close($insert_data_preparedstmt);
 mysqli_close($con);
 header("Location:signup.php");
 }else{
-//redirect to analytics page
+//redirect to analytics page after creating table
       $_SESSION["table"]=$_POST["username"];
+	   mysqli_stmt_close($insert_data_preparedstmt);
+	  $sql = "CREATE TABLE {$_SESSION["table"]} (
+	product  varchar(100),
+	price int(11),
+	quantity int(11)
+)";
+
+if (mysqli_query($con, $sql)) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
+}
 /* close connection */
+ 
 mysqli_close($con);
 header("Location:analytics.php");
 }

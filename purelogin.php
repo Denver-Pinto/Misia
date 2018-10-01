@@ -14,10 +14,12 @@ if ( !mysqli_execute($select_data_preparedstmt) ) {
  if(mysqli_stmt_fetch($select_data_preparedstmt)) {    
    $_SESSION["table"]=$_POST["username"];
   /* close connection */
+    mysqli_stmt_close($select_data_preparedstmt);
 mysqli_close($con);
   header("Location:inventory.php");
  }else{
 /* close connection */
+  mysqli_stmt_close($select_data_preparedstmt);
 mysqli_close($con);
  header("Location:login.php");
  }

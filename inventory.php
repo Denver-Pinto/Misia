@@ -27,8 +27,10 @@ $(document).ready(function(){
 });
 </script>
 <script>
+//finding a better way to do this !
 function check()
 {
+	
 	if($('input[name=choice]:checked').length<=0)
 {
  alert("No choice checked")
