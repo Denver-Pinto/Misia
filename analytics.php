@@ -7,11 +7,10 @@ $d= date("Y-m-d H:i:s");
 $date=date_create($d);
 date_sub($date,date_interval_create_from_date_string("30 days"));
 $limit=date_format($date,"Y-m-d H:i:s");
-echo "last entry that can be accessed : ".$limit."<br>";
 ?>
 <html>
 <head>
-
+<link rel="stylesheet" type="text/css" href="global.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -22,13 +21,19 @@ $(document).ready(function(){
 });
 </script>
 </head>
-<body><button> Back</button>
+<body>
+<div id="pagewrapper">
+<div class="header">
+NEARBY HISTORY PAGE
+<button class="header_button">BACK</button>
+<div><?php echo "last entry that can be accessed : ".$limit."<br>";?></div></div>
+
 	<table>
-	<caption>Last 30 days activity around your area <?php echo $_SESSION["table"];?><br>
+	<caption>Last 30 days Activity Around You<?php //echo $_SESSION["table"];?><br>
 	</caption>
 	
 	<tr>
-	<td>Product Name</td> <td>Availabilty</td><td>Timestamp</td>
+	<th>Product Name</th> <th>Availabilty</th><th>Timestamp</th>
 	</tr>
 	<?php
 	$select_ll_preparedstmt= mysqli_prepare($con, "SELECT lat,lng from shops where username=?");
@@ -76,5 +81,7 @@ if ( !mysqli_execute($select_data_preparedstmt) ) {
 	 mysqli_stmt_close($select_data_preparedstmt);
 ?>
 </table>
+</div>
+<div class="footer">Medicine Inventory Search & Improvement Assistant</div>
 </body>
 </html>

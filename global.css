@@ -1,20 +1,23 @@
- th, td{
-	border-bottom: 1 px solid grey;
-	text-align:left;
+ 
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid lightgreen;
 	vertical-align:middle;
 	height:50px;
 }
+
 table 
 {
 	border-collapse:collapse;
+	margin-left:35%;
 }
 tr:hover {background-color: #f5f5f5;}
 
-#pagewrapper
+th
 {
-}
-#footer
-{
+	border: 1px solid #ddd;
+	background-color:lightgreen;
 }
 html{
   position: relative;
@@ -55,12 +58,12 @@ html{
   ul{
   list-style-type: none;
   float: center;
-  margin-left: 60px;
+  margin-left:1px;
 
 }
  ul li{
    float :left;
-   width:75px;
+   width:30%;
    margin-right: 50px;
    margin-left: 50px;
  }
@@ -69,8 +72,8 @@ html{
 	 width:150px;
 	 height:35px;
 	 margin-top:5px;
-   margin-right: 50px;
-   margin-left: 50px;
+   margin-right: 5px;
+   margin-left: 5px;
    background-color: lightgreen;
  }
  
