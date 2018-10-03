@@ -8,6 +8,7 @@ echo "WELCOME".$_SESSION["table"]."<br>";
 ?>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="global.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -93,11 +94,11 @@ return true;
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
+    background-color: lightgreen;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 60%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -120,11 +121,16 @@ input[type=text],input[type=number]
 </style>
 </head>
 <body >
-<button id="history">Nearby history</button>
-<button id="logout">Logout</button>
+<div id="pagewrapper">
+<div class="header">
+INVENTORY PAGE
+<button class="header_button" id="history">Nearby history</button>
+<button class="header_button" id="logout">Logout</button>
+<button class="header_button" id="myBtn">Update Inventory</button>
+</div>
 <table>
-<caption>INVENTORY</caption>
-<tr> <td>Product</td><td> Price</td> <td> Quantity</td> </tr>
+
+<tr> <th>PRODUCT</th><th>PRICE</th> <th>QUANTITY</th> </tr>
    <?php
 	$select_product_preparedstmt= mysqli_prepare($con, "SELECT product,price,quantity from {$_SESSION["table"]}");
 	    //check the prepared statement
@@ -145,8 +151,6 @@ input[type=text],input[type=number]
 		  // close statement 
 		mysqli_stmt_close($select_product_preparedstmt);
 		?>
-		<tr colspan="3"> <td><button id="myBtn">Update Inventory</button></td>
-		</tr>
 		</table>
 		<div id="myModal" class="modal">
 
@@ -155,14 +159,13 @@ input[type=text],input[type=number]
     <span class="close">&times;</span>
 	
     <form name ="inventory" method ="post" action="pureinventory.php" onsubmit="check()">
-	Update Item<input type="radio" name="choice" value="update">
-	Delete Item<input type="radio" name="choice" value="delete">
-	Insert Item<input type="radio" name="choice" value="add">
-	<br>
-	Medicine<input type="text" placeholder="Enter the correct medicine information" name="medicine"required><br>
-	Price <input type ="number" placeholder ="Enter the price of the medicine" id="price" name="price"><br>
-	Quantity <input type ="number" placeholder ="Enter the current quantity of the medicine" id="quantity" name="quantity"><br>
-	<input type="submit" value="submit">
+	<p><label>Update Item</label><input type="radio" name="choice" value="update"></p>
+	<p><label>Delete Item</label><input type="radio" name="choice" value="delete"></p>
+	<p><label>Insert Item</label><input type="radio" name="choice" value="add"></p>
+	<p><label>Medicine</label><input type="text"  name="medicine"required></p>
+	<p><label>Price</label> <input type ="number" id="price" name="price"></p>
+	<p><label>Quantity</label><input type ="number" id="quantity" name="quantity"></p>
+	<p><label></label><input type="submit" value="submit"></p>
 	</form>
   </div>
 
