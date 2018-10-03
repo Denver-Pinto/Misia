@@ -5,6 +5,7 @@ session_start();
 ?>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="global.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -57,20 +58,26 @@ function showError(error) {
 }
 </script>
 </head>
-<body>
-Signup form
-<form action="puresignup.php" method ="post">
-	<input type="text" placeholder="Enter your username" name="username" required>
-	<br>
-	<input type="password" placeholder="Enter your password" name="password" required>
-	<br>
-	Latitude<input type ="number" step="0.000001" readonly min="-90.000000" max ="90.000000" id="lat" name="lat" value="">
-	<br>
-	Longitude<input type="number" step="0.000001" readonly min="-180.000000" max="180.000000" id="lng" name="lng" value="">		
-	<br>
+<body><div id="pagewrapper">
+<div class="header">
+SIGNUP FORM
+</div>
+<form name="form" action="puresignup.php" method ="post">
+	<p><label>USERNAME</label><input type="text"  name="username" required>
+	</p>
+	<p><label>PASSWORD</label><input type="password"  name="password" required>
+	</p>
+	<p><label>LATITUDE</label><input type ="number" step="0.000001" readonly min="-90.000000" max ="90.000000" id="lat" name="lat" value="">
+	</p>
+	<p><label>LONGITUDE</label><input type="number" step="0.000001" readonly min="-180.000000" max="180.000000" id="lng" name="lng" value="">		
+	</p>
+	<p><label></label>
 	<input type ="submit" value ="signup">
-	<br>
+	</p>
+	
 </form>
-<a href="login.php">Login</a> if you have registered your store with us!
+<a href="login.php"style="margin-left:40%">LogIn</a> if already registered!
+</div>
+<div class="footer">Medicine Inventory Search & Improvement Assistant</div>
 </body>
 </html>

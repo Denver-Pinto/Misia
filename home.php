@@ -3,6 +3,7 @@ session_start();
 ?>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="global.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -64,17 +65,23 @@ $(document).ready(function(){
 </script>
 </head>
 <body >
-<button>Shop owner</button>
-<form action=" medical.php" method ="post">
-	<input type="text" placeholder="Enter your medicine here" name="medicine" required>
-	<br>
-	Latitude<input type ="number" step="0.000001" readonly min="-90.000000" max ="90.000000" id="lat" name="lat" value="">
-	<br>
-	Longitude<input type="number" step="0.000001" readonly min="-180.000000" max="180.000000" id="lng" name="lng" value="">		
-	<br>
-	Distance<input type="number" step="1" min="0" name="distance" id="distance">
-	<br>
+<div id="pagewrapper">
+<div class="header">
+HOME PAGE
+<button class="header_button">SHOP OWNER</button></div>
+<form name="form" action=" medical.php" method ="post">
+	<p><label>MEDICINE</label><input type="text" name="medicine" required></p>
+	
+	<p><label>LATITUDE</label><input type ="number" step="0.000001" readonly min="-90.000000" max ="90.000000" id="lat" name="lat" value="">
+	</p>
+	<p><label>LONGITUDE</label><input type="number" step="0.000001" readonly min="-180.000000" max="180.000000" id="lng" name="lng" value="">		
+	</p>
+	<p><label>RADIUS</label><input type="number" step="1" min="0" name="distance" id="distance">
+	</p>
+	<label></label>
 	<input type ="submit" value ="search">
 </form>
+</div>
+<div class="footer">Medicine Inventory Search & Improvement Assistant</div>
 </body>
 </html>
