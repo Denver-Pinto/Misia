@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$mdb ="maindb";
+$mdb ="misia";
 // Create connection
 $con = mysqli_connect($servername, $username, $password,$mdb);
 
