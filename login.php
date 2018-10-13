@@ -7,7 +7,8 @@ if(isset($_SESSION["table"])){//session name is not set so logout
 ?>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="global.css">
+<link rel="stylesheet" type="text/css" href="css/global.css">
+<link rel="stylesheet" type="text/css" href="css/login.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
@@ -16,9 +17,9 @@ if(isset($_SESSION["table"])){//session name is not set so logout
 LOGIN FORM
 </div>
 <form action="purelogin.php" method ="post">
-	<p><label>USERNAME</label><input type="text" placeholder="Enter your username" name="username" required> 
+	<p><label>USERNAME</label><input type="text" placeholder="Enter username" name="username" required> 
 	</p>
-	<p><label>PASSWORD</label><input type="password" placeholder="Enter your password" name="password" required>
+	<p><label>PASSWORD</label><input type="password" placeholder="Enter password" name="password" required>
 	</p>
 	<p><label></label><input type ="submit" value ="login">
 	</p>
