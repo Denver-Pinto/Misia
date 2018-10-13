@@ -5,7 +5,8 @@ session_start();
 ?>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="global.css">
+<link rel="stylesheet" type="text/css" href="css/global.css">
+<link rel="stylesheet" type="text/css" href="css/signup.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -63,9 +64,9 @@ function showError(error) {
 SIGNUP FORM
 </div>
 <form name="form" action="puresignup.php" method ="post">
-	<p><label>USERNAME</label><input type="text"  name="username" required>
+	<p><label>USERNAME</label><input type="text"  name="username"placeholder="Enter username" required>
 	</p>
-	<p><label>PASSWORD</label><input type="password"  name="password" required>
+	<p><label>PASSWORD</label><input type="password"  name="password" placeholder="Enter password"required>
 	</p>
 	<p><label>LATITUDE</label><input type ="number" step="0.000001" readonly min="-90.000000" max ="90.000000" id="lat" name="lat" value="">
 	</p>

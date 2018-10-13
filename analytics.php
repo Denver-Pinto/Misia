@@ -10,7 +10,7 @@ $limit=date_format($date,"Y-m-d H:i:s");
 ?>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="global.css">
+<link rel="stylesheet" type="text/css" href="css/global.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
