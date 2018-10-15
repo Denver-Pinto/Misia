@@ -6,7 +6,7 @@ input[type=text]{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    border: 2px solid blue;
+    border: 1px solid black;
 }
 input[type=number]{
     width: 70%;
@@ -16,7 +16,7 @@ input[type=number]{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    border: 2px solid blue;
+    border: 1px solid black;
     border-radius: 4px;
     background-color: pink;
     color: white;
@@ -24,11 +24,11 @@ input[type=number]{
 
 input[type=submit] {
     width: 50%;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #c0c0c0;
+    color: black;
     padding: 1px 20px;
     margin: 8px 0;
-    border: none;
+    border: 1 px solid white;
     border-radius: 4px;
     cursor: pointer;
     text:center;

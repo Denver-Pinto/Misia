@@ -6,32 +6,7 @@ input[type=text]{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    border: 2px solid blue;
-}
-input[type=password]{
-    width: 70%;
-    padding: 1px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    border: 2px solid blue;
-    border-radius: 4px;
-    background-color: pink;
-    color: white;
-}
-
-input[type=submit] {
-    width: 50%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 1px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text:center;
+    border: 1px solid black;
 }
 input[type=number]{
     width: 70%;
@@ -41,16 +16,40 @@ input[type=number]{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    border: 2px solid blue;
+    border: 1px solid black;
     border-radius: 4px;
     background-color: pink;
     color: white;
 }
 
+input[type=submit] {
+    width: 50%;
+    background-color: #c0c0c0;
+    color: black;
+    padding: 1px 20px;
+    margin: 8px 0;
+    border: 1 px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+    text:center;
+}
+
 input[type=submit]:hover {
     background-color: #45a049;
 }
- 
+input[type=password]{
+    width: 70%;
+    padding: 1px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: pink;
+    color: white;
+}
+
 body{
 background-image: url('../images/background.jpg');
     background-repeat: no-repeat; 
