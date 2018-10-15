@@ -26,6 +26,7 @@ $(document).ready(function(){
 	});
 
 });
+
 </script>
 <script>
 //finding a better way to do this !

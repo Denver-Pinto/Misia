@@ -28,13 +28,13 @@ NEARBY HISTORY PAGE
 <button class="header_button">BACK</button>
 <div><?php echo "last entry that can be accessed : ".$limit."<br>";?></div></div>
 
-	<table>
+	<table >
 	<caption>Last 30 days Activity Around You<?php //echo $_SESSION["table"];?><br>
 	</caption>
 	
 	<tr>
 	<th>Product Name</th> <th>Availabilty</th><th>Timestamp</th>
-	</tr>
+	</tr> 
 	<?php
 	$select_ll_preparedstmt= mysqli_prepare($con, "SELECT lat,lng from shops where username=?");
 	    //check the prepared statement

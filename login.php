@@ -32,8 +32,6 @@ LOGIN FORM <button class="header_button">SIGNUP</button>
 	<p><label></label><input type ="submit" value ="login">
 	</p>
 </form>
-
-<a href="signup.php"style="margin-left:40%">SignUp</a> if not registered!
 </div>
 <div class="footer">Medicine Inventory Search & Improvement Assistant</div>
 </body>

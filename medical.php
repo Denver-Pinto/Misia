@@ -27,7 +27,13 @@ $(document).ready(function(){
 
 });
 </script>
-
+<style>
+body{
+background-image: url('../images/background.jpg');
+    background-repeat: no-repeat; 
+background-size: cover;
+}
+</style>
 
 </head>
 <body>
