@@ -58,10 +58,19 @@ function showError(error) {
 		$("#lng").attr("required","required");
 }
 </script>
+<script>
+$(document).ready(function(){
+	$("button").click(function(){
+		window.location="login.php";
+	});
+
+});
+</script>
 </head>
 <body><div id="pagewrapper">
 <div class="header">
 SIGNUP FORM
+<button class="header_button">LOGIN</button>
 </div>
 <form name="form" action="puresignup.php" method ="post">
 	<p><label>USERNAME</label><input type="text"  name="username"placeholder="Enter username" required>
@@ -77,7 +86,6 @@ SIGNUP FORM
 	</p>
 	
 </form>
-<a href="login.php"style="margin-left:40%">LogIn</a> if already registered!
 </div>
 <div class="footer">Medicine Inventory Search & Improvement Assistant</div>
 </body>

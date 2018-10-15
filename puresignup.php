@@ -1,7 +1,17 @@
-<?php
+<?php 
 require 'connection.php';
 session_start();
-$insert_data_preparedstmt =mysqli_prepare($con, "INSERT INTO shops(username,password,lat,lng)VALUES (?,?,?,?) ");
+$q="SELECT * FROM shops WHERE username= '{$_POST["username"]}'";
+ $r=mysqli_query($con,$q);
+$row=mysqli_fetch_row($r);
+//Now to check, we use an if() statement
+if($row != NULL) {
+ //print "Username exists";
+ mysqli_close($con);
+header("Location:signup.php");
+  } else {
+ //print "Username doesn't exist";
+ $insert_data_preparedstmt =mysqli_prepare($con, "INSERT INTO shops(username,password,lat,lng)VALUES (?,?,?,?) ");
 //insert shop data 
 if ( !$insert_data_preparedstmt ) {
   die('mysqli error: '.mysqli_error($con));
@@ -33,5 +43,6 @@ if (mysqli_query($con, $sql)) {
  
 mysqli_close($con);
 header("Location:analytics.php");
+}
 }
 ?>
