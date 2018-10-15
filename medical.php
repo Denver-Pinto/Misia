@@ -6,10 +6,10 @@ $lng=$_POST["lng"];
 $product=$_POST["medicine"];
 $number=0;
 $distance=$_POST["distance"];
-echo  $lat."<br>";
+/*echo  $lat."<br>";
 echo $lng."<br>";
 echo $product."<br>";
-echo $distance."<br>";
+echo $distance."<br>";*/
 $lat_array=array($lat);
 $lng_array=array($lng);
 $information =array("you");
@@ -31,6 +31,10 @@ $(document).ready(function(){
 
 </head>
 <body>
+<div id="pagewrapper">
+<div class="header">
+RESULTS <button class="header_button">SEARCH</button>
+</div>
 <script>
 function myMap() {
 var marker;
@@ -127,8 +131,9 @@ infowindow = new google.maps.InfoWindow({
 $number--;}?>
 }
 </script>
-<button>Search something else</button>
 <div id="googleMap" style="width:100%;height:400px;"></div>
+</div>
+<div class="footer">Medicine Inventory Search & Improvement Assistant</div>
 <script src="https://maps.googleapis.com/maps/api/js?key=&callback=myMap"></script>
 </body>
 </html>
