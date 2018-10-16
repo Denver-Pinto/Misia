@@ -3,7 +3,7 @@
 Hey there!
 
 A mini project created to assist people in their constant search of medicines too rare or expensive to be stored in stores' inventory while 
-helping stores improve their inventories based on nearby searches.
+helping the stores to improve their respective inventories based on nearby people searches.
 
 ## To run this project on your browser:
 1. Download and run XAMPP control panel.
